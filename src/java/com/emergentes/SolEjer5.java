@@ -49,6 +49,7 @@ public class SolEjer5 extends HttpServlet {
             throws ServletException, IOException {
         
         int res=0;
+        String res2="";
         String men="";
         int numA= Integer.parseInt(request.getParameter("numA"));
         int numB= Integer.parseInt(request.getParameter("numB"));
@@ -60,24 +61,30 @@ public class SolEjer5 extends HttpServlet {
             case 1:
                 men="Suma";
                 res=numA+numB;
+                res2=res+"";
                 break;
             case 2:
                 men="Resta";
                 res=numA-numB;
+                res2=res+"";
+                res2=res+"";
                 break;
             case 3:
                 men="Multiplicacion";
                 res=numA*numB;
+                res2=res+"";
                 break;
             case 4:
                 men="Division";
                 if(numB!=0)
                 {
                     res=numA/numB;
+                    res2=res+"";
                 }
                     else
                 {
                     res=0;
+                    res2="No existe division entre cero";
                 }
                 break;
 
@@ -98,7 +105,7 @@ public class SolEjer5 extends HttpServlet {
             out.println("<h1>Num A: " +numA+ "</h1>");
             out.println("<h1>Num B: " +numB+ "</h1>");
             out.println("<h1>" +men+ "</h1>");
-            out.println("<h1>resultado: " +res+ "</h1>");
+            out.println("<h1>resultado: " +res2+ "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
